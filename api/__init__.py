@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restful import Api
-from api.config import Download_path
+
 app = Flask(__name__)
 api = Api(app)
 
@@ -10,8 +10,9 @@ from api.MediaLib import MediaLib
 
 media = MediaLib()
 
-media.add_media(Download_path, "download", unstructured=True)
-media.add_media("/home/ivan/Videos", "videos",unstructured=True)
+
+from . import config
+
 
 
 
